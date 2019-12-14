@@ -7,12 +7,14 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @author gggitpl
  */
 @Data
 @Accessors(chain = true)
-public class BaseEntity {
+public class BaseEntity implements Serializable {
 
     @TableId
     @ApiModelProperty(value = "id")
