@@ -28,9 +28,9 @@ public class Pageable<T> {
     private String sort;
 
     public Page<T> getPage() {
-        Page<T> val1 = new Page<>(page, pageSize);
-        val1.setOrders(getOrderItems());
-        return val1;
+        Page<T> var1 = new Page<>(page, pageSize);
+        var1.setOrders(getOrderItems());
+        return var1;
     }
 
     public Wrapper<T> getWrapper(T t) {
@@ -62,12 +62,12 @@ public class Pageable<T> {
             ArrayList<OrderItem> orderItems = Lists.newArrayList();
             String[] items = sort.split(",");
             for (String item : items) {
-                String[] val2 = item.split(":");
-                String val3 = val2[0], val4 = val2[1];
-                if (Sort.DESC.getValue().equals(val4)) {
-                    orderItems.add(OrderItem.desc(val3));
-                } else if (Sort.ASC.getValue().equals(val4)) {
-                    orderItems.add(OrderItem.asc(val3));
+                String[] var2 = item.split(":");
+                String var3 = var2[0], var4 = var2[1];
+                if (Sort.DESC.getValue().equals(var4)) {
+                    orderItems.add(OrderItem.desc(var3));
+                } else if (Sort.ASC.getValue().equals(var4)) {
+                    orderItems.add(OrderItem.asc(var3));
                 }
             }
             return orderItems;
